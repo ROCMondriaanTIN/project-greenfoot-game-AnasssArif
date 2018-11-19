@@ -1,0 +1,116 @@
+
+import greenfoot.*;
+import java.util.*;
+
+/**
+ *
+ * @author R. Springer
+ */
+public class Hero extends Mover {
+
+    private final double gravity;
+    private final double acc;
+    private final double drag;
+    private int coinBronze;
+    private char Spike;
+    private GreenfootImage run1 = new GreenfootImage("p1_walk01 L.png");
+    private GreenfootImage run2 = new GreenfootImage("p1_walk02 L.png");
+    private GreenfootImage run3 = new GreenfootImage("p1_walk03 L.png");
+    private GreenfootImage run4 = new GreenfootImage("p1_walk04 L.png");
+    private GreenfootImage run5 = new GreenfootImage("p1_walk05 L.png");    
+    private GreenfootImage run6 = new GreenfootImage("p1_walk06 L.png");
+    private GreenfootImage run7 = new GreenfootImage("p1_walk07 L.png");
+    private GreenfootImage run8 = new GreenfootImage("p1_walk01 L.png");
+    private GreenfootImage run9 = new GreenfootImage("p1_walk01 L.png");
+    
+    
+    
+    
+    
+    
+    public Hero() {
+        super();
+        gravity = 9.8;
+        acc = 0.6;
+        drag = 0.8;
+        setImage("p1.png");
+    }
+
+    @Override
+    public void act() {
+        handleInput();
+        
+        velocityX *= drag;
+        velocityY += acc;
+        if (velocityY > gravity) {
+            velocityY = gravity;
+        }
+        applyVelocity();
+
+        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(this);
+                break;
+            }
+        }
+        
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+            if (tile != null) {
+                if(tile.getImage().toString().contains("spikes" )){
+                getWorld().removeObject(this);
+            }
+            }
+        }
+        
+        //List<Tile> tile = new List<>();
+        List<CoinBronze> tiles = getIntersectingObjects(CoinBronze.class);
+        for(CoinBronze coin: tiles){
+            getWorld().removeObject(coin);
+            coinBronze ++;
+            return;
+        }
+        
+        
+        
+       
+            
+            
+        for (Actor actor : getIntersectingObjects(Tile.class))
+        {
+          Tile tile = (Tile) actor;
+          if (tile != null & tile.equals("coinBronze"))
+          {  
+          getWorld().removeObject(tile);
+          coinBronze ++;
+          return;
+          
+        }
+    }
+}
+    
+    
+    
+        public void handleInput () {
+        if (Greenfoot.isKeyDown("space")) {
+            velocityY = -8;
+        }
+
+        if (Greenfoot.isKeyDown("left")) {
+            velocityX = -2;
+            animatieLeft();
+            setImage("p1/p1_walk05.png");
+        } else if (Greenfoot.isKeyDown("right")) {
+            velocityX = 2;
+            animatieRight();
+            setImage("p1/p1_walk03.png");
+        }
+    }
+
+    public int getWidth() {
+        return getImage().getWidth();
+    }
+
+    public int getHeight() {
+        return getImage().getHeight();
+    }
+}
