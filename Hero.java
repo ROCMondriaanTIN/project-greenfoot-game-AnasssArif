@@ -30,7 +30,8 @@ public class Hero extends Mover {
     private int status = 0;
 
     private String direction = "right";
-    public static int coin;
+    public static int munt;
+    
     
     public Hero() {
         super();
@@ -70,7 +71,20 @@ public class Hero extends Mover {
             }
         }
         
-    }   
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+           if (tile != null) { 
+           if (tile.getImage().toString().contains("liquid")){
+               dood();
+               break; 
+       }
+           if (tile.getImage().toString().contains("coinBronze")){
+               getWorld().removeObject(tile);
+            
+            }
+        }   
+        }
+        
+    } 
      private double posToNeg(double x) {
 
             return (x - (x * 2));
@@ -245,7 +259,7 @@ public class Hero extends Mover {
 
     }
 
- 
+    
 
     public void mirror() {
 

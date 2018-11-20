@@ -70,7 +70,8 @@ public class MyWorld extends World {
         addObject(camera, 0, 0);
         addObject(hero, 300, 1983);
         addObject(new Enemy(), 1170, 410);
-        
+        Scoreboard scoreboard = new Scoreboard();
+        addObject(scoreboard, 69, 29);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
