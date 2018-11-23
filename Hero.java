@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -22,11 +21,12 @@ public class Hero extends Mover {
     private GreenfootImage walkIm10;
     private GreenfootImage walkIm11;
     private int width;
-
+    private int levens = 1;
     private boolean isOnGround;
-
+    private int spawnX;
+    private int spawnY;
     private int walkStatus = 1;
-
+    private int score = 0;
     private int status = 0;
 
     private String direction = "right";
@@ -38,6 +38,9 @@ public class Hero extends Mover {
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
+        this.spawnX = spawnX;
+        this.spawnY = spawnY;
+        
         
         walkIm1 = new GreenfootImage ("p1_walk1.png");
         walkIm2 = new GreenfootImage ("p1_walk2.png");
@@ -57,6 +60,7 @@ public class Hero extends Mover {
     public void act() {
         handleInput();
         
+        getWorld().showText("Score = " + score, 100, 20);
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -79,11 +83,14 @@ public class Hero extends Mover {
        }
            if (tile.getImage().toString().contains("coinBronze")){
                getWorld().removeObject(tile);
-            
+               updateScoremunt();
+               break;
             }
+           if (tile.getImage().toString().contains("spikes")){
+               getWorld().removeObject(this);
         }   
         }
-        
+    }  
     } 
      private double posToNeg(double x) {
 
@@ -270,7 +277,16 @@ public class Hero extends Mover {
         }
 
     }
-
+    
+    public void dood() {
+        levens --;
+        if (levens > 0) {
+          setLocation(spawnX, spawnY);
+        } else {
+          getWorld().removeObject(this);
+        }
+    } 
+    
     public int getWidth() {
         return getImage().getWidth();
     }
@@ -278,4 +294,10 @@ public class Hero extends Mover {
     public int getHeight() {
         return getImage().getHeight();
     }
+   
+    
+    public void updateScoremunt()
+    {
+        score ++;    
+    }   
 }

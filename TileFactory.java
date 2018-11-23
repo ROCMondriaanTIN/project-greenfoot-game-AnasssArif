@@ -1378,7 +1378,7 @@ public class TileFactory {
 
                 tile = new Tile("window.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT); 
 
-                tile.isSolid = true; 
+                tile.isSolid = false; 
 
                 break; 
 
