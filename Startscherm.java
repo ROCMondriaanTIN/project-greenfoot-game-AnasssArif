@@ -6,29 +6,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Startscherm extends Actor
+public class Startscherm extends World
 {
+
     /**
-     * Act - do whatever the Startscherm wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor for objects of class Startscherm.
+     * 
      */
-    public Startscherm() 
-    {
-        // Add your action code here.
-        //super(800, 600, 1);
-        
+    public Startscherm()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(1000, 800, 1);
+        Greenfoot.start();
         prepare();
-    } 
+    }
     private void prepare()
     {
-        //TitleLetters titleletters = new TitleLetters();        
-        //addObject(titleletters, 400, 300);     
+      Start start = new Start();
+      Titel titel = new Titel();
+      addObject(start, 500, 400);  
+      addObject(titel, 500, 400);
     }
     public void act()
     {
-        setImage("startscherm.jpg");
         if (Greenfoot.isKeyDown("enter"))
-
-           getWorld().removeObject(this);
-        }
-        }      
+        {
+          Greenfoot.setWorld(new LevelSelect());  
+            
+}
+}
+}
