@@ -78,7 +78,7 @@ public class Hero extends Mover {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
            if (tile != null) { 
            if (tile.getImage().toString().contains("liquid")){
-               dood();
+               setLocation(200, 300);
                break; 
        }
            if (tile.getImage().toString().contains("coinBronze")){
@@ -88,10 +88,22 @@ public class Hero extends Mover {
             }
            if (tile.getImage().toString().contains("spikes")){
                getWorld().removeObject(this);
+               break;
         }   
-        }
-    }  
-    } 
+        }}
+        for (Actor actor : getIntersectingObjects(Tile.class)) {
+            Tile tile = (Tile) actor;
+            if (tile.getImage().toString().contains("window")) {
+                                
+                    getWorld().removeObject(this);
+                }  
+
+    
+
+            }
+        } 
+    
+
      private double posToNeg(double x) {
 
             return (x - (x * 2));
