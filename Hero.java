@@ -87,7 +87,7 @@ public class Hero extends Mover {
                break;
             }
            if (tile.getImage().toString().contains("spikes")){
-               getWorld().removeObject(this);
+               setLocation(200, 300);
                break;
         }   
         }}

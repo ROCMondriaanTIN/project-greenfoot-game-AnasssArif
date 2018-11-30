@@ -24,8 +24,8 @@ public class Startscherm extends World
     {
       Start start = new Start();
       Titel titel = new Titel();
-      addObject(start, 500, 400);  
-      addObject(titel, 500, 400);
+      addObject(start, 650, 400);  
+      addObject(titel, 650, 400);
     }
     public void act()
     {
