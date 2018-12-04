@@ -1758,8 +1758,45 @@ public class TileFactory {
 
                 break; 
 
-                 
-
+            case 231:
+                
+                tile = new Tile("L_A.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                
+                break;
+                
+            case 232:
+                
+                tile = new Tile("L_B.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                
+                break;
+            
+             case 233:
+                
+                tile = new Tile("L_A.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                
+                break;    
+                
+             case 234:
+             
+                tile = new Tile("L_D.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                
+                break;
+                
+             case 235:
+             
+                tile = new Tile("L_E.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+             
+                break;
+                
+              case 236:
+              
+                tile = new Tile("L_F.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+              
+                break;
+                
+             case 237:
+             
+                tile = new Tile (""
             default: 
 
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT); 

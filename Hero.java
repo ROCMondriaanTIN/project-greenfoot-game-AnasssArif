@@ -1,4 +1,4 @@
- import greenfoot.*;
+import greenfoot.*;
 
 /**
  *
@@ -78,7 +78,7 @@ public class Hero extends Mover {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
            if (tile != null) { 
            if (tile.getImage().toString().contains("liquid")){
-               setLocation(200, 300);
+               setLocation(134, 502);
                break; 
        }
            if (tile.getImage().toString().contains("coinBronze")){
@@ -87,20 +87,20 @@ public class Hero extends Mover {
                break;
             }
            if (tile.getImage().toString().contains("spikes")){
-               setLocation(200, 300);
+               setLocation(134, 502);
                break;
         }   
         }}
         for (Actor actor : getIntersectingObjects(Tile.class)) {
             Tile tile = (Tile) actor;
-            if (tile.getImage().toString().contains("window")) {
-                                
-                    getWorld().removeObject(this);
-                }  
-
-    
-
+            
             }
+            for (Actor deur : getIntersectingObjects(Deur.class)) {
+            if (deur != null) {
+                Greenfoot.setWorld(new LevelSelect());
+                break;
+            }
+        }
         } 
     
 
@@ -277,9 +277,7 @@ public class Hero extends Mover {
         getImage().scale(width, heigth);
 
     }
-
-    
-
+  
     public void mirror() {
 
         if (direction.equals("left")) {
