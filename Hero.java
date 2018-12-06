@@ -38,8 +38,8 @@ public class Hero extends Mover {
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        this.spawnX = spawnX;
-        this.spawnY = spawnY;
+        spawnX = 125;
+        spawnY = 3800;
         
         
         walkIm1 = new GreenfootImage ("p1_walk1.png");
@@ -78,7 +78,7 @@ public class Hero extends Mover {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
            if (tile != null) { 
            if (tile.getImage().toString().contains("liquid")){
-               setLocation(134, 502);
+               setLocation(spawnX, spawnY);
                break; 
        }
            if (tile.getImage().toString().contains("coinBronze")){
@@ -87,7 +87,7 @@ public class Hero extends Mover {
                break;
             }
            if (tile.getImage().toString().contains("spikes")){
-               setLocation(134, 502);
+               setLocation(spawnX, spawnY);
                break;
         }   
         }}
@@ -149,19 +149,14 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("space")) {
-
- 
-
-            if (isOnGround) {
+            velocityY = -17;
+            /*if (isOnGround) {
 
                 velocityY = -17;
 
                 animationJump(getWidth(), getHeight(),1);
 
-            }
-
- 
-
+            }*/
         }
 
  
