@@ -95,7 +95,7 @@ public class Journey extends World
         // moet de klasse Mover extenden voor de camera om te werken
         int spawnX = 300;
         int spawnY = 3032;
-        Hero hero = new Hero();
+        Hero hero = new Hero(134, 3803);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -128,8 +128,7 @@ public class Journey extends World
     
     private void prepare()
     {
-        Hero hero = new Hero();
-        addObject(counter, 100, 40);
+         addObject(counter, 100, 40);
     }      
     
     public Counter getCounter()

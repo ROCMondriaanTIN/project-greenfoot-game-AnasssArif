@@ -33,13 +33,13 @@ public class Hero extends Mover {
     public static int munt;
     
     
-    public Hero() {
+    public Hero(int spawnX, int spawnY) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        spawnX = 125;
-        spawnY = 3800;
+        this.spawnX = spawnX;
+        this.spawnY = spawnY;
         
         
         walkIm1 = new GreenfootImage ("p1_walk1.png");
@@ -149,14 +149,14 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("space")) {
-            velocityY = -17;
-            /*if (isOnGround) {
+            //velocityY = -10;
+            if (isOnGround) {
 
                 velocityY = -17;
 
                 animationJump(getWidth(), getHeight(),1);
 
-            }*/
+            }
         }
 
  
