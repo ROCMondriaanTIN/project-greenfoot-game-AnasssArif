@@ -14,6 +14,15 @@ public class Level5Titel extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        click();
+    }  
+    public void click()
+    {
+        if(Greenfoot.mouseClicked(this))
+        {
+           Greenfoot.setWorld(new Snow()); 
+        }   
 }
+}
+    
+

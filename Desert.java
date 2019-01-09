@@ -20,7 +20,7 @@ public class Desert extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super (900, 900, 1, false);
         this.setBackground("desert.png"); 
-        
+        showText("Welk dier is geschikt om over de woestijn te reizen? Verzamel de letters voor het antwoord", 450, 850);
        
                
         int[][] map4 =

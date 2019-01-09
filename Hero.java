@@ -149,7 +149,6 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("space")) {
-            //velocityY = -10;
             if (isOnGround) {
 
                 velocityY = -17;
