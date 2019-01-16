@@ -12,12 +12,23 @@ public class Level5Titel extends Actor
      * Act - do whatever the Level5Titel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+     boolean beschikbaar;
+    public Level5Titel(boolean beschikbaar){
+        this.beschikbaar = beschikbaar;
+        if(beschikbaar){
+            setImage("level5.png");
+        }else{
+            setImage("level5_false.png");
+        }
+    }
+    
     public void act() 
     {
         click();
     }  
     public void click()
     {
+        
         if(Greenfoot.mouseClicked(this))
         {
            Greenfoot.setWorld(new Snow()); 

@@ -96,7 +96,7 @@ public class Snow extends World
         // moet de klasse Mover extenden voor de camera om te werken
         int spawnX = 300;
         int spawnY = 3032;
-        Hero hero = new Hero(76, 163);
+        Hero hero = new Hero(76, 163, 5);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -130,7 +130,7 @@ public class Snow extends World
     
     private void prepare()
     {
-        Hero hero = new Hero(76, 163);
+        Hero hero = new Hero(76, 163, 5);
         addObject(counter, 100, 40);
     }      
     

@@ -67,7 +67,7 @@ public class Candy extends World
         // moet de klasse Mover extenden voor de camera om te werken
         int spawnX = 300;
         int spawnY = 3032;
-        Hero hero = new Hero(181, 1563);
+        Hero hero = new Hero(181, 1563, 3);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -101,7 +101,7 @@ public class Candy extends World
     
     private void prepare()
     {
-        Hero hero = new Hero(181, 1563);
+        Hero hero = new Hero(181, 1563, 3);
         addObject(counter, 100, 40);
     }      
     

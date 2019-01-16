@@ -31,11 +31,7 @@ public class Music extends Actor
         setImage("play.png");
         
         
-        }
-         else{
-               sound.playLoop();
-            setImage("pause.png");
-             
+
        }
        
         

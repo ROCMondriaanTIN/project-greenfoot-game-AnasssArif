@@ -12,15 +12,27 @@ public class Level1Titel extends Actor
      * Act - do whatever the Level1Titel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    boolean beschikbaar;
+    public Level1Titel(boolean beschikbaar){
+        this.beschikbaar = beschikbaar;
+        if(beschikbaar){
+            setImage("level1.png");
+        }else{
+            setImage("level1_false.png");
+        }
+    }
+    
     public void act() 
     {
         click();
     }    
     public void click()
     {
-        if(Greenfoot.mouseClicked(this))
-        {
-           Greenfoot.setWorld(new MyWorld()); 
-        }   
+        if(beschikbaar){
+            if(Greenfoot.mouseClicked(this))
+            {
+                Greenfoot.setWorld(new MyWorld()); 
+            }   
+    }
 }
 }

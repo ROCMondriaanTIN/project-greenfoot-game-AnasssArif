@@ -28,19 +28,19 @@ public class Hero extends Mover {
     private int walkStatus = 1;
     private int score = 0;
     private int status = 0;
-
+    private int level;
     private String direction = "right";
     public static int munt;
     
     
-    public Hero(int spawnX, int spawnY) {
+    public Hero(int spawnX, int spawnY, int level) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
-        
+        this.level = level;
         
         walkIm1 = new GreenfootImage ("p1_walk1.png");
         walkIm2 = new GreenfootImage ("p1_walk2.png");
@@ -97,7 +97,7 @@ public class Hero extends Mover {
             }
             for (Actor deur : getIntersectingObjects(Deur.class)) {
             if (deur != null) {
-                Greenfoot.setWorld(new LevelSelect());
+                Greenfoot.setWorld(new LevelSelect(level + 1));
                 break;
             }
         }
