@@ -13,8 +13,8 @@ public class Level1Titel extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     boolean beschikbaar;
-    public Level1Titel(boolean beschikbaar){
-        this.beschikbaar = beschikbaar;
+    public Level1Titel(boolean _beschikbaar){
+        this.beschikbaar = _beschikbaar;
         if(beschikbaar){
             setImage("level1.png");
         }else{
