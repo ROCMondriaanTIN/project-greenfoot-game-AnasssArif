@@ -78,7 +78,7 @@ public class Hero extends Mover {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
            if (tile != null) { 
            if (tile.getImage().toString().contains("liquid")){
-               setLocation(spawnX, spawnY);
+               Greenfoot.setWorld(new GameOver(level));
                break; 
        }
            if (tile.getImage().toString().contains("coinBronze")){
@@ -87,7 +87,7 @@ public class Hero extends Mover {
                break;
             }
            if (tile.getImage().toString().contains("spikes")){
-               setLocation(spawnX, spawnY);
+               Greenfoot.setWorld(new GameOver(level));
                break;
         }   
         }}

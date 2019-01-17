@@ -28,11 +28,12 @@ public class Level5Titel extends Actor
     }  
     public void click()
     {
-        
+        if (beschikbaar){
         if(Greenfoot.mouseClicked(this))
         {
            Greenfoot.setWorld(new Snow()); 
-        }   
+        }
+    }
 }
 }
     

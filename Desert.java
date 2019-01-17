@@ -82,6 +82,7 @@ public class Desert extends World
         addObject(new Letter('M'), 1859, 361);
         addObject(new Letter('E'), 958, 513);
         addObject(new Letter('L'), 210, 132);
+        addObject(new Deur(), 35, 245);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);

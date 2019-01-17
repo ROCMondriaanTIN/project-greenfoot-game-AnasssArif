@@ -83,6 +83,7 @@ public class Candy extends World
         addObject(new Letter('N'), 3372, 1353);
         addObject(new Letter('D'), 2730, 1003);
         addObject(new Letter('Y'), 459, 443);
+        addObject(new Deur(), 385, 455);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
